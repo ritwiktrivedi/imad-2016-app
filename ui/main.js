@@ -75,7 +75,11 @@ function loadLoginForm () {
         console.log(password);
         request.open('POST', '/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: username, password: password}));  
+        if (username.length === 0) {
+              res.status(403).send('username/password is invalid');
+          } else {
+              request.send(JSON.stringify({username: username, password: password})); 
+          }
         register.value = 'Registering...';
     
     };
