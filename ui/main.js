@@ -1,3 +1,5 @@
+// The first thing to do is to check if the user is logged in!
+loadLogin();
 function loadLoginForm () {
     var loginHtml = `
         <h3>Login/Register to unlock awesome features</h3>
